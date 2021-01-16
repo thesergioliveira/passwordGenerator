@@ -78,16 +78,16 @@ let charNumSp = [
   "`",
   "~",
 ];
-/* 
+
 const passGen = (size) => {
   let newSize = size / 2;
   let password = "";
   for (let i = 1; i <= newSize; i++) {
     if (i % 2 == 0) {
-      password += charSet[Math.floor(Math.random() * charSet.length - 1)];
+      password += charSet[Math.floor(Math.random() * charSet.length)];
     } else {
       password += charSet[
-        Math.floor(Math.random() * charSet.length - 1)
+        Math.floor(Math.random() * charSet.length)
       ].toUpperCase();
     }
   }
@@ -96,10 +96,11 @@ const passGen = (size) => {
   }
 
   return password;
-}; */
+};
 
-//console.log(passGen(20));
+console.log(passGen(20));
 //passGen();
+
 console.log("----------VivSolution----------------------");
 const passwordGen = () => {
   let numb = [0, 1, 2, 3, 4, 5, 6, 6, 7, 8, 9];
@@ -194,20 +195,29 @@ const passGen = () => {
     return Math.floor(Math.random() * arr.length);
   };
   for (let i = 0; i <= 17; i++) {
-    // #18
+    // it runs 8 times
+    // #31 charac
+    //
+    //9B@  i=0
+    //u    i=1
+    //0h   i=2
+    //D    i=3
+    //5h   i=4
+    //y@6Ct6pC3z§m1Df3fB&2re
+
     if (i % 2 == 0) {
       //0,2,4,6,8,10,12,14,16 = #9
       result += numbers[randomNumGetter(numbers)];
     }
     if (i % 3 == 0) {
-      // 3,9,15 = #3
+      //0, 3, 6, 9, 12, 15 = #6
       result += alpha[randomNumGetter(alpha)].toUpperCase();
     } else {
-      // 1,7,11,13,17 + #5
+      // 1, 2, 4, 5, 7, 8, 10, 11, 13, 14, 16, 17 + #12
       result += alpha[randomNumGetter(alpha)];
     }
     if (i % 5 == 0) {
-      // 5 +#1
+      // 0, 5,10,15 +#4
       result += charactersSp[randomNumGetter(charactersSp)];
     }
   }
