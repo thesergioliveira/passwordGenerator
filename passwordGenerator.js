@@ -92,17 +92,17 @@ const passGen = (size) => {
     }
   }
   for (let i = 1; i <= newSize; i++) {
-    password += charNumSp[Math.floor(Math.random() * charNumSp.length - 1)];
+    password += charNumSp[Math.floor(Math.random() * charNumSp.length)];
   }
 
   return password;
 };
 
-console.log(passGen(20));
+console.log(passGen(30));
 //passGen();
 
 console.log("----------VivSolution----------------------");
-const passwordGen = () => {
+const passwordGen1st = () => {
   let numb = [0, 1, 2, 3, 4, 5, 6, 6, 7, 8, 9];
   let alphaLc = [
     "a",
@@ -154,7 +154,7 @@ const passwordGen = () => {
   }
   return password;
 };
-console.log(passwordGen());
+console.log(passwordGen1st());
 
 // console.log(passwordGen());
 // other way
@@ -189,7 +189,7 @@ let alpha = [
   "z",
 ];
 let charactersSp = ["!", "§", "$", "%", "&", "?", "@", "€"];
-const passGen = () => {
+const passGen2nd = () => {
   let result = "";
   const randomNumGetter = (arr) => {
     return Math.floor(Math.random() * arr.length);
@@ -224,4 +224,4 @@ const passGen = () => {
   return result;
 };
 
-console.log(passGen());
+console.log(passGen2nd());
